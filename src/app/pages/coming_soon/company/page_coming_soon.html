@@ -1,0 +1,239 @@
+<!-- Wrapper -->
+<div id="wrapper">
+
+
+    <!-- Content
+        ================================================== -->
+
+    <!-- Coming Soon Page -->
+    <div class="coming-soon-page" style="background-image: url(assets/images/background.png)">
+
+        <button (click)="becomeTraveller()" class="button pull-right" style="top:2%; right: 1%; z-index:1000; color: #F5F5F5; background:none; border: solid 1px #FFD54F;">Register as Traveller</button>
+
+        <div class="container">
+
+            <!-- Search -->
+            <div class="row">
+
+                <!-- REGISTERED -->
+                <div class="col-md-12 row" *ngIf="registered" style="margin-top:5%;">
+                    
+                    <img src="assets/images/white_logo.png" alt="">
+
+                    <h2 class="white-text">
+                        <span style="border:solid 1px #FFC107; border-radius:30px; padding:5px;">
+                            Welcome aboard {{companyName}}!
+                        </span>
+                    </h2>
+                    <h3 class="white-text">
+                        You've been added to our partners listing queue.<br>
+                        We'll get back to you with more details as soon as possible.
+                    </h3>
+                    <h4 class="white-text">
+                        Our support team is available through: 
+                        <span style="color:#FFC107;">
+                                partners@hostellerscard.com
+                        </span>
+                    </h4>
+                </div>
+
+                <!-- NOT REGISTERED YET -->
+                <div class="col-md-12 row" *ngIf="!registered" style="margin-top:18%;">
+
+                    <img src="assets/images/white_logo.png" alt="">
+
+                    <h3 class="white-text">
+                        Drive Travellers to you.
+                        <span class="highlight-text">Market your business.</span>
+                        <br>
+                    </h3>
+                    <h4 class="white-text" style="margin-top:-15px;">Sign up and get more information on how to get your Business Listing on Hostellers Card</h4>
+
+
+                    <div class="col-md-12 white-text" *ngIf="errorMsg" style="background-color:#F44336; border-radius:10px; padding:5px;">
+                            {{errorMsg}}
+                    </div>
+
+                    <div class="col-md-12 text-center" style="margin-top:3%;">
+
+                        <div class="col-md-3 row text-center">
+                            <input [(ngModel)]="companyName" class="form-control" type="text" placeholder="Company Name" value="" />
+                        </div>
+                        <div class="col-md-3 row text-center" style="margin-left:2%;">
+                            <input [(ngModel)]="companyEmail" type="text" placeholder="Email address" value="" />
+                        </div>
+                        <div class="col-md-3 row text-center" style="margin-left:2%;">
+                            <select class="form-control" [(ngModel)]="companyCountry" placeholder="Country">
+                                <option value="">Country</option>
+                                <option *ngFor="let country of countries.data" value="{{country.name}}">
+                                    {{country.name}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 row text-center" style="margin-left:2%;">
+                            <select class="form-control" [(ngModel)]="companySector" placeholder="Company Sector">
+                                <option value="">Business Sector</option>
+                                <option *ngFor="let sector of sectors" value="{{sector.name}}">
+                                    {{sector.name}}
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-12 text-center">
+                            <br>&nbsp;
+                            <br>
+                            <span *ngIf="loading">loading</span>
+                            <button *ngIf="!loading" (click)="register()" class="button" style="background-color: #FFC107; color:#424242;">Submit</button>
+                        </div>
+
+                        <div class="col-md-12 text-center light-grey-text" style="margin-top:10%;">
+                            <span class="white-text">
+                                know more
+                            </span>
+                            <br>
+                            <span class="im im-icon-Arrow-DowninCircle">
+
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- Search Section / End -->
+        </div>
+    </div>
+    <!-- Coming Soon Page / End -->
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h2 class="headline centered margin-top-80">
+                    5 reasons to get your Business listing on Hostellers Card
+                </h2>
+            </div>
+        </div>
+
+        <div class="row icons-container">
+
+            <!-- Stage -->
+            <div class="col-md-3">
+                <div class="icon-box-2 with-line">
+                    <i class="im im-icon-Globe tean-text"></i>
+                    <h3>Global Visibility</h3>
+                    <p>Have your Business listed on what will become the world's largest travel network
+                    </p>
+                </div>
+            </div>
+
+            <!-- Stage -->
+            <div class="col-md-3">
+                <div class="icon-box-2 with-line">
+                    <i class="im im-icon-Money-2 tean-text"></i>
+                    <h3>Boost your business</h3>
+                    <p>Boost your Business and increase revenue</p>
+                </div>
+            </div>
+
+            <!-- Stage -->
+            <div class="col-md-3">
+                <div class="icon-box-2 with-line">
+                    <i class="im im-icon-Hand-TouchSmartphone tean-text"></i>
+                    <h3>Direct Contact</h3>
+                    <p>No more third party agents.
+                        <br> Pay comissions no more!</p>
+                </div>
+            </div>
+
+            <!-- Stage -->
+            <div class="col-md-3">
+                <div class="icon-box-2 with-line">
+                    <i class="im im-icon-Speach-Bubbles tean-text"></i>
+                    <h3>Talk!</h3>
+                    <p>Convert visitors into customers
+                        <br> We redirect our users directly to your business</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="col-md-12 text-center" style="margin-top:10%;">
+            <span>
+                more
+            </span>
+            <br>
+            <span class="im im-icon-Arrow-DowninCircle"></span>
+        </div>
+
+    </div>
+
+    <div class="clearfix"></div>
+
+    <hr/>
+
+    <div class="col-md-12 row" style=" height:180px; padding:10px; margin:0px;">
+
+        <div class="row">
+
+            <div class="col-md-5 text-center">
+
+                <img src="assets/images/mobile.png" />
+
+            </div>
+
+            <div class="col-md-7 text-center">
+                <br>&nbsp;
+                <br>
+                <h1>
+                    Business Digital Card
+                </h1>
+                <h2>
+                    <p>Hostellers Card is all about inovation and digital,
+                        <br> As our partner your gain access to your Business digital card.</p>
+
+                    <p>
+                        Get to know all your business metrics, and by this
+                        <br>
+                        <b>Get to know your business market</b>.
+                    </p>
+                </h2>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<!-- Wrapper / End -->
+
+<div class="col-md-12 row footer" style="margin-top:240px;">
+
+    <div class="col-md-4">
+
+        <span>
+            All rights reserved to Hostellers Card | 2017
+        </span>
+
+    </div>
+
+    <div class="col-md-4 text-center">
+
+        <a href="#">
+            <span class="im im-icon-Facebook fb-color-text"></span>
+        </a>
+        &nbsp;
+        <a href="#">
+            <span class="im im-icon-Google-Plus gplus-color-text"></span>
+        </a>
+
+    </div>
+
+
+    <div class="col-md-4 text-right">
+        Got a question? Email us:
+        <a class="tean-text">support@hostellerscard.com</a>
+    </div>
+
+</div>

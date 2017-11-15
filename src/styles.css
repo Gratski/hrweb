@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+.highlight-text{
+    color: #FFC107 !important;
+}
+.tean-text{
+    color: #009688 !important;
+}
+.red-text{
+    color: #F44336 !important;
+}
+.blue-text{
+    color: #03A9F4 !important;
+}
+.green-text{
+    color: #4CAF50 !important;
+}
+.white-text{
+    color: #fff;
+}
+.light-grey-text{
+    color: #EEEEEE;
+}
+.fb-color-text{
+    color: #3F51B5;
+    font-weight: 600;
+}
+
+.gplus-color-text{
+    color: #F44336;
+    font-weight: 600;
+}
+
+.button-bg{
+    background-color: #FFC107 !important;
+}
+
+.footer{
+    background-color: #EEEEEE;
+    padding:20px;
+    margin:0px;
+    margin-top:20px;
+}
